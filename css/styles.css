@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Orbitron:wght@400..900&display=swap");
+
+* {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
+body {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(166, 207, 68), rgb(241, 156, 27));
+}
+
+.game {
+  display: flex;
+}
+
+/*===============NEXT TETROMINO FIELD STYLES==================*/
+.next-tetromino {
+  margin-top: 420px;
+  margin-right: 20px;
+  display: grid;
+  padding: 0.5vh;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(8, auto);
+  border-radius: 0.5vh;
+  background: rgb(212, 241, 45);
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.579),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.451), 6px 6px 20px rgba(0, 0, 0, 0.535);
+}
+
+.next-tetromino div {
+  height: min(4vh, 7vw);
+  width: min(4vh, 7vw);
+  background-color: rgba(212, 164, 164, 0.205);
+  border-radius: 0.3vh;
+  box-shadow: inset 2px 2px 2px rgba(235, 170, 170, 0.271),
+    inset -2px -2px 2px rgba(7, 20, 46, 0.271);
+}
+
+/*===============GAME FIELD STYLES==================*/
+.tetris {
+  display: grid;
+  padding: 0.5vh;
+  grid-template-columns: repeat(17, auto);
+  grid-template-rows: repeat(22, auto);
+  border-radius: 0.5vh;
+  background: rgb(212, 241, 45);
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.579),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.451), 6px 6px 20px rgba(0, 0, 0, 0.535);
+}
+
+.tetris div {
+  height: min(4vh, 7vw);
+  width: min(4vh, 7vw);
+  background-color: rgba(212, 164, 164, 0.205);
+  border-radius: 0.3vh;
+  box-shadow: inset 2px 2px 2px rgba(235, 170, 170, 0.271),
+    inset -2px -2px 2px rgba(7, 20, 46, 0.271);
+}
+
+.tetris .O {
+  box-shadow: 0px 0px 1px 1px rgb(77, 14, 79) inset;
+  background: rgb(175, 23, 206);
+}
+.tetris .L {
+  box-shadow: 0px 0px 1px 1px rgb(95, 31, 89) inset;
+  background: rgb(206, 23, 124);
+}
+.tetris .I {
+  box-shadow: 0px 0px 1px 1px rgb(71, 25, 25) inset;
+  background: rgb(206, 23, 23);
+}
+.tetris .J {
+  box-shadow: 0px 0px 1px 1px rgb(63, 85, 174) inset;
+  background: rgb(23, 206, 206);
+}
+.tetris .X {
+  box-shadow: 0px 0px 1px 1px rgb(57, 83, 39) inset;
+  background: rgb(96, 206, 23);
+}
+.tetris .T {
+  box-shadow: 0px 0px 1px 1px rgb(78, 36, 3) inset;
+  background: rgb(206, 157, 23);
+}
+.tetris .S {
+  box-shadow: 0px 0px 1px 1px rgb(88, 48, 2) inset;
+  background: rgb(247, 243, 33);
+}
+.tetris .Z {
+  box-shadow: 0px 0px 1px 1px rgb(6, 70, 64) inset;
+  background: rgb(23, 206, 99);
+}
+.tetris .D {
+  box-shadow: 0px 0px 1px 1px rgb(82, 56, 137) inset;
+  background: rgb(94, 96, 241);
+}
+.tetris .R {
+  box-shadow: 0px 0px 1px 1px rgb(163, 56, 56) inset;
+  background: rgb(248, 117, 100);
+}
+.tetris .B {
+  box-shadow: 0px 0px 1px 1px rgb(9, 64, 33) inset;
+  background: rgb(7, 97, 30);
+}
+
+/*===============SCORE STYLES==================*/
+.goal-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal {
+  margin-left: 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Bungee Shade", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #680442;
+  line-height: 80px;
+}
+
+p {
+  font-family: "Orbitron", sans-serif;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+/*===============GAME OVER STYLES==================*/
+.game-over {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(15, 14, 14, 0.5);
+}
+
+.restart {
+  position: absolute;
+  bottom: 50%;
+  left: 40%;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  animation: animate125 3000ms infinite 1000ms;
+  color: rgb(224, 174, 174);
+  background-color: rgb(14, 13, 13);
+}
+
+.restart:hover {
+  transform: scale(1.25);
+}
+
+#oops {
+  position: absolute;
+  bottom: 60%;
+  left: 45%;
+}
