@@ -1,9 +1,9 @@
-export const TETRISFIELD_COLUMNS = 17;
-export const TETRISFIELD_ROWS = 22;
-export const NEXT_FIGURE_COLUMNS = 5;
-export const NEXT_FIGURE_ROWS = 8;
+export const PLAYFIELD_COLUMNS = 12;
+export const PLAYFIELD_ROWS = 20;
+export const NEXT_PLAYFIELD_COLUMNS = 4;
+export const NEXT_PLAYFIELD_ROWS = 6;
 
-export const TETRISFIGURES_NAMES = [
+export const TETROMINOES_NAMES = [
   "O",
   "L",
   "I",
@@ -17,7 +17,7 @@ export const TETRISFIGURES_NAMES = [
   "B",
 ];
 
-export const TETRISFIGURES_SHAPES = {
+export const TETROMINOES_SHAPES = {
   O: [
     [1, 1],
     [1, 1],
@@ -70,3 +70,5 @@ export const TETRISFIGURES_SHAPES = {
 };
 
 export const btnRestart = document.querySelector(".restart");
+export const showScore = document.querySelector("#score");
+export const tetris = document.querySelector(".tetris");
