@@ -30,14 +30,14 @@ body {
   display: flex;
 }
 
-/*===============NEXT TETROMINO FIELD STYLES==================*/
+/*===============TETROMINO PLAYFIELD NEXT STYLES==================*/
 .next-tetromino {
   margin-top: 420px;
   margin-right: 20px;
   display: grid;
   padding: 0.5vh;
-  grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(8, auto);
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(6, auto);
   border-radius: 0.5vh;
   background: rgb(212, 241, 45);
   box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.579),
@@ -45,7 +45,6 @@ body {
 }
 
 .next-tetromino div {
-  height: min(4vh, 7vw);
   width: min(4vh, 7vw);
   background-color: rgba(212, 164, 164, 0.205);
   border-radius: 0.3vh;
@@ -57,8 +56,8 @@ body {
 .tetris {
   display: grid;
   padding: 0.5vh;
-  grid-template-columns: repeat(17, auto);
-  grid-template-rows: repeat(22, auto);
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(20, auto);
   border-radius: 0.5vh;
   background: rgb(212, 241, 45);
   box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.579),
@@ -74,50 +73,80 @@ body {
     inset -2px -2px 2px rgba(7, 20, 46, 0.271);
 }
 
-.tetris .O {
+.tetris .O,
+.next-tetromino .O {
   box-shadow: 0px 0px 1px 1px rgb(77, 14, 79) inset;
   background: rgb(175, 23, 206);
 }
-.tetris .L {
+.tetris .L,
+.next-tetromino .L {
   box-shadow: 0px 0px 1px 1px rgb(95, 31, 89) inset;
   background: rgb(206, 23, 124);
 }
-.tetris .I {
+.tetris .I,
+.next-tetromino .I {
   box-shadow: 0px 0px 1px 1px rgb(71, 25, 25) inset;
   background: rgb(206, 23, 23);
 }
-.tetris .J {
+.tetris .J,
+.next-tetromino .J {
   box-shadow: 0px 0px 1px 1px rgb(63, 85, 174) inset;
   background: rgb(23, 206, 206);
 }
-.tetris .X {
+.tetris .X,
+.next-tetromino .X {
   box-shadow: 0px 0px 1px 1px rgb(57, 83, 39) inset;
   background: rgb(96, 206, 23);
 }
-.tetris .T {
+.tetris .T,
+.next-tetromino .T {
   box-shadow: 0px 0px 1px 1px rgb(78, 36, 3) inset;
   background: rgb(206, 157, 23);
 }
-.tetris .S {
+.tetris .S,
+.next-tetromino .S {
   box-shadow: 0px 0px 1px 1px rgb(88, 48, 2) inset;
   background: rgb(247, 243, 33);
 }
-.tetris .Z {
+.tetris .Z,
+.next-tetromino .Z {
   box-shadow: 0px 0px 1px 1px rgb(6, 70, 64) inset;
   background: rgb(23, 206, 99);
 }
-.tetris .D {
+.tetris .D,
+.next-tetromino .D {
   box-shadow: 0px 0px 1px 1px rgb(82, 56, 137) inset;
   background: rgb(94, 96, 241);
 }
-.tetris .R {
+.tetris .R,
+.next-tetromino .R {
   box-shadow: 0px 0px 1px 1px rgb(163, 56, 56) inset;
   background: rgb(248, 117, 100);
 }
-.tetris .B {
+.tetris .B,
+.next-tetromino .B {
   box-shadow: 0px 0px 1px 1px rgb(9, 64, 33) inset;
   background: rgb(7, 97, 30);
 }
+
+.shaking {
+    animation: shake .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 /*===============SCORE STYLES==================*/
 .goal-wrap {
