@@ -2,12 +2,31 @@ import { countScore } from "./countScore.js";
 import { getRandomHexColor } from "./functionRandom.js";
 import { playfield } from "./generatePlayfield.js";
 import { PLAYFIELD_COLUMNS, PLAYFIELD_ROWS, tetris } from "./utils.js";
+import { imgBam } from "./utils.js";
 
 let deleteFullRows = 0;
 
+const imgAnimationStart = () => {
+  imgBam.classList.add("shaking");
+  imgBam.classList.remove("visually-hidden");
+};
+
+const imgAnimationFinish = () => {
+  imgBam.classList.remove("shaking");
+  imgBam.classList.add("visually-hidden");
+};
+
 const shaking = () => {
   setTimeout(() => {
+    imgAnimationStart();
     tetris.classList.remove("shaking");
+    removeImgShaking();
+  }, 500);
+};
+
+const removeImgShaking = () => {
+  setTimeout(() => {
+    imgAnimationFinish();
   }, 500);
 };
 

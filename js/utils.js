@@ -72,3 +72,4 @@ export const TETROMINOES_SHAPES = {
 export const btnRestart = document.querySelector(".restart");
 export const showScore = document.querySelector("#score");
 export const tetris = document.querySelector(".tetris");
+export const imgBam = document.querySelector(".funny-message-bomb");
