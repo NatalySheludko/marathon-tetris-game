@@ -11,33 +11,25 @@
     <div class="game">
       <div class="next-tetromino"></div>
       <div class="tetris"></div>
-      
-			<div class="goal-wrap">
-			<img
-        class="funny-message-bomb"
-        src="./img/bomb.png"
-        width="300"
-        height="300"
-        alt="boom-image"
-      />
 
-      <div class="goal">
-        <h1>tetris</h1>
-        <p>Filled rows: <span id="output"></span></p>
-        <p>Score: <span id="score"></span></p>
+      <div class="goal-wrap">
+        <div class="goal">
+          <h1>tetris</h1>
+          <p>Filled rows: <span id="output"></span></p>
+          <p>Score: <span id="score"></span></p>
+        </div>
+        <img
+          class="funny-message-bomb visually-hidden"
+          src="./img/bombs.png"
+          width="200"
+          height="200"
+          alt="boom-image"
+        />
       </div>
     </div>
-</div>
     <div class="game-over visually-hidden">
-      <img
-        id="oops"
-        src="./img/oopss.png"
-        width="300"
-        height="200"
-        alt="oops-image"
-      />
-			<button class="restart" type="button">restart</button>
-      
+      <h2 class="game-over-title">game over</h2>
+      <button class="restart" type="button">restart</button>
     </div>
 
     <script type="module" src="./js/main.js"></script>
