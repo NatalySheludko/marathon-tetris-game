@@ -1,13 +1,9 @@
-import {
-  draw,
-	placeTetromino,
-	moveDown,
-} from "./main.js";
+import { draw, placeTetromino, moveDown } from "./main.js";
 import { tetromino } from "./generateTetromino.js";
 import { isValid } from "./isValidCollisions.js";
 
-export let timeoutId;
-export let requestId;
+export let timeoutId = null;
+export let requestId = null;
 export let isPaused = false;
 
 //падіння фігури

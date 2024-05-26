@@ -12,10 +12,7 @@
 import { countScore } from "./countScore.js";
 import { findFilledRows, removeFillRows } from "./filledRows.js";
 import { generatePlayfield, playfield } from "./generatePlayfield.js";
-import {
-  playfieldNext,
-  generatePlayfieldNext,
-} from "./generatePlayfieldNext.js";
+import { generatePlayfieldNext } from "./generatePlayfieldNext.js";
 import {
   generateTetromino,
   tetromino,
@@ -25,9 +22,9 @@ import { stopLoop, startLoop, moveTetrominoDown } from "./moveTetrominoes.js";
 import {
   PLAYFIELD_COLUMNS,
   PLAYFIELD_ROWS,
-  NEXT_PLAYFIELD_ROWS,
   NEXT_PLAYFIELD_COLUMNS,
   btnRestart,
+	NEXT_PLAYFIELD_ROWS,
 } from "./utils.js";
 
 let cells = null;
@@ -45,7 +42,7 @@ function init() {
   generateTetromino(true);
   generatePlayfieldNext();
   cells = document.querySelectorAll(".tetris div");
-  cellsNext = document.querySelectorAll(".next-tetromino div"); 
+  cellsNext = document.querySelectorAll(".next-tetromino div");
   countScore(null);
   startLoop();
 }
@@ -74,7 +71,7 @@ export const draw = () => {
   cells.forEach((cell) => {
     cell.removeAttribute("class");
   });
-  drawPlayField();
+  drawPlayField(playfield, cells, PLAYFIELD_ROWS, PLAYFIELD_COLUMNS);
   drawTetromino();
   drawTetrominoNext();
 };
@@ -93,7 +90,7 @@ const getPositionToCellIndex = (row, column) => {
   return row * PLAYFIELD_COLUMNS + column;
 };
 
-const drawPlayField = () => {
+const drawPlayField = (playfield, cells, PLAYFIELD_ROWS, PLAYFIELD_COLUMNS) => {
   for (let row = 0; row < PLAYFIELD_ROWS; row += 1) {
     for (let column = 0; column < PLAYFIELD_COLUMNS; column += 1) {
       const name = playfield[row][column]; //проходження по всім рядам і колонкам
@@ -105,19 +102,6 @@ const drawPlayField = () => {
 
 const getPositionToCellIndexPlayfieldNext = (row, column) => {
   return row * NEXT_PLAYFIELD_COLUMNS + column;
-};
-
-const drawPlayfieldNext = () => {
-  for (let row = 0; row < NEXT_PLAYFIELD_ROWS; row += 1) {
-    for (let column = 0; column < NEXT_PLAYFIELD_COLUMNS; column += 1) {
-      const name = playfieldNext[row][column];
-      const cellIndexPlayfieldNext = getPositionToCellIndexPlayfieldNext(
-        row,
-        column
-      );
-      cellsNext[cellIndexPlayfieldNext].classList.add(name);
-    }
-  }
 };
 
 function drawTetromino() {
@@ -149,7 +133,7 @@ function drawTetromino() {
 
 const drawTetrominoNext = () => {
   //clearPlayfieldNext();
-  let extraRow = 0;
+  let extraRow = 2;
   let extraColumn = 1;
   const nameNext = tetrominoNext.name;
   const matrixNext = tetrominoNext.matrix.length;
@@ -192,8 +176,5 @@ export const placeTetromino = () => {
   generateTetromino(false);
   clearPlayfieldNext();
   drawPlayField();
-  drawPlayfieldNext();
   drawTetrominoNext();
 };
-
-
