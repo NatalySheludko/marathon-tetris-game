@@ -130,28 +130,54 @@ body {
 }
 
 .shaking {
-    animation: shake .5s;
-    animation-iteration-count: infinite;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
   }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 
 /*===============SCORE STYLES==================*/
 .goal-wrap {
   display: flex;
   flex-direction: column;
+}
+
+.funny-message-bomb {
+  margin-left: 20px;
 }
 
 .goal {
@@ -162,7 +188,7 @@ h1 {
   text-transform: uppercase;
   font-family: "Bungee Shade", sans-serif;
   font-size: 60px;
-  font-weight: 400;
+  font-weight: 500;
   color: #680442;
   line-height: 80px;
 }
@@ -206,4 +232,15 @@ p {
   position: absolute;
   bottom: 60%;
   left: 45%;
+}
+
+.game-over-title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "Bungee Shade", sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  color: #080005;
+  line-height: 80px;
 }
