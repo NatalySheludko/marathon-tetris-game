@@ -1,8 +1,13 @@
 import { countScore } from "./countScore.js";
 import { getRandomHexColor } from "./functionRandom.js";
 import { playfield } from "./generatePlayfield.js";
-import { PLAYFIELD_COLUMNS, PLAYFIELD_ROWS, tetris } from "./utils.js";
-import { imgBam } from "./utils.js";
+import {
+  PLAYFIELD_COLUMNS,
+  PLAYFIELD_ROWS,
+  tetris,
+  imgBam,
+  showFilledRows,
+} from "./utils.js";
 
 let deleteFullRows = 0;
 
@@ -41,8 +46,9 @@ export const findFilledRows = () => {
     if (PLAYFIELD_COLUMNS === filledColumns) {
       //пушимо номер ряду
       filledRows.push(row);
+
       deleteFullRows += 1;
-      document.getElementById("output").innerHTML = deleteFullRows;
+      showFilledRows.innerHTML = deleteFullRows;
     }
   }
   return filledRows;
@@ -65,8 +71,7 @@ export const removeFillRows = (filledRows) => {
   filledRows.forEach((row) => {
     //видаляє по одному ряду (навіть якщо дек.одразу то по черзі)
     dropRowsAbove(row);
-    document.querySelector(".tetris").style.backgroundColor =
-      getRandomHexColor();
+    tetris.style.backgroundColor = getRandomHexColor();
     countScore(filledRows.length);
   });
 };
