@@ -9,24 +9,72 @@
 
   <body>
     <div class="game">
-      <div class="next-tetromino"></div>
-      <div class="tetris"></div>
+      <img
+        class="funny-message-bomb visually-hidden"
+        src="./img/bombs.png"
+        width="200"
+        height="200"
+        alt="boom-image"
+      />
 
-      <div class="goal-wrap">
-        <div class="goal">
-          <h1>tetris</h1>
-          <p>Filled rows: <span id="output"></span></p>
-          <p>Score: <span id="score"></span></p>
+      <div class="next-tetromino"></div>
+
+      <div class="tetris"></div>
+    </div>
+
+    <div class="goal-wrap">
+      <h1>tetris</h1>
+      <p>Filled rows: <span id="output">0</span></p>
+      <p class="score">Score: <span id="score"></span></p>
+
+      <div class="btn-wrap">
+        <div class="common-btn">
+          <button class="btn-pause" type="button">
+            <svg class="icons" width="30" height="30" aria-label="icon pause">
+              <use href="./img/icons.svg#play-pause"></use>
+            </svg>
+          </button>
+          <button class="btn-new-game" type="button">
+            <svg class="icons" width="28" height="28" aria-label="icon switch">
+              <use href="./img/icons.svg#icon-switch"></use>
+            </svg>
+          </button>
+          <button class="btn-drop-bottom" type="button">
+            <svg
+              class="icons"
+              width="28"
+              height="28"
+              aria-label="icon arrow down"
+            >
+              <use href="./img/icons.svg#icon-arrow-down"></use>
+            </svg>
+          </button>
         </div>
-        <img
-          class="funny-message-bomb visually-hidden"
-          src="./img/bombs.png"
-          width="200"
-          height="200"
-          alt="boom-image"
-        />
+        <button class="btn-reverse btn" type="button">
+          <svg class="icons" width="28" height="28" aria-label="icon loop">
+            <use href="./img/icons.svg#icon-loop"></use>
+          </svg>
+        </button>
+        <div class="left-right-btn">
+          <button class="btn-left" type="button">
+            <svg class="icons" width="28" height="28" aria-label="icon left">
+              <use href="./img/icons.svg#icon-circle-left"></use>
+            </svg>
+          </button>
+          <button class="btn-right" type="button">
+            <svg class="icons" width="28" height="28" aria-label="icon right">
+              <use href="./img/icons.svg#icon-circle-right"></use>
+            </svg>
+          </button>
+        </div>
+        <button class="btn-bottom btn" type="button">
+          <svg class="icons" width="28" height="28" aria-label="icon down">
+            <use href="./img/icons.svg#icon-circle-down"></use>
+          </svg>
+        </button>
       </div>
     </div>
+
     <div class="game-over visually-hidden">
       <h2 class="game-over-title">game over</h2>
       <button class="restart" type="button">restart</button>

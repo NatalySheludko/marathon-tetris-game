@@ -2,11 +2,9 @@
 - Saas
 - Level
 - Speed
-- btn (пауза, переворот, ліво, право, низ, пробіл-низ)
 - restart + your goals
 - best goals
 - user form
-- oops - знайти щось цікавіше
 - інструкція
 */
 import { countScore } from "./countScore.js";
@@ -24,12 +22,14 @@ import {
   PLAYFIELD_ROWS,
   NEXT_PLAYFIELD_COLUMNS,
   btnRestart,
-	NEXT_PLAYFIELD_ROWS,
+  btnNewGame,
 } from "./utils.js";
 
 let cells = null;
 let cellsNext = null;
 let isGameOver = false;
+
+btnNewGame.addEventListener("click", init);
 
 init();
 //stopLoop(); - для кнопки старт

@@ -1,6 +1,14 @@
 import { draw, placeTetromino, moveDown } from "./main.js";
 import { tetromino } from "./generateTetromino.js";
 import { isValid } from "./isValidCollisions.js";
+import {
+  btnBottom,
+  btnDropBottom,
+  btnLeft,
+  btnReverse,
+  btnRight,
+  btnPause,
+} from "./utils.js";
 
 export let timeoutId = null;
 export let requestId = null;
@@ -28,12 +36,16 @@ export const togglePauseGame = () => {
   }
 };
 
+btnPause.addEventListener("click", togglePauseGame);
+
 export const dropTetrominoDown = () => {
   while (!isValid()) {
     tetromino.row += 1;
   }
   tetromino.row -= 1;
 };
+
+btnDropBottom.addEventListener("click", dropTetrominoDown);
 
 export const rotateMatrix = (matrixTetromino) => {
   //ловимо матрицю фігур
@@ -57,6 +69,8 @@ export const rotateTetromino = () => {
   }
 };
 
+btnReverse.addEventListener("click", rotateTetromino);
+
 export const moveTetrominoDown = () => {
   tetromino.row += 1;
   if (isValid()) {
@@ -65,12 +79,16 @@ export const moveTetrominoDown = () => {
   }
 };
 
+btnBottom.addEventListener("click", moveTetrominoDown);
+
 export const moveTetrominoLeft = () => {
   tetromino.column -= 1;
   if (isValid()) {
     tetromino.column += 1;
   }
 };
+
+btnLeft.addEventListener("click", moveTetrominoLeft);
 
 export const moveTetrominoRight = () => {
   tetromino.column += 1;
@@ -79,10 +97,12 @@ export const moveTetrominoRight = () => {
   }
 };
 
+btnRight.addEventListener("click", moveTetrominoRight);
+
 //відслідковує клавіатуру
 const keyboard = document.addEventListener("keydown", (event) => {
   event.preventDefault();
-  if (event.key === "p") {
+  if (event.key === "Enter") {
     togglePauseGame();
   }
   if (isPaused) {

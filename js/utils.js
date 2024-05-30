@@ -69,7 +69,17 @@ export const TETROMINOES_SHAPES = {
   ],
 };
 
+export const showFilledRows = document.getElementById("output");
 export const btnRestart = document.querySelector(".restart");
 export const showScore = document.querySelector("#score");
 export const tetris = document.querySelector(".tetris");
 export const imgBam = document.querySelector(".funny-message-bomb");
+
+//*BUTTONS
+export const btnReverse = document.querySelector(".btn-reverse");
+export const btnLeft = document.querySelector(".btn-left");
+export const btnRight = document.querySelector(".btn-right");
+export const btnBottom = document.querySelector(".btn-bottom");
+export const btnDropBottom = document.querySelector(".btn-drop-bottom");
+export const btnPause = document.querySelector(".btn-pause");
+export const btnNewGame = document.querySelector(".btn-new-game");
