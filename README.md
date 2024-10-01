@@ -8,6 +8,7 @@ Tetris is a classic puzzle game in which players arrange falling blocks (tetromi
 - Problem Solving and Research: Identifying and resolving technical issues, conducting research to find optimal solutions, and improve the overall quality of the game.
 
 ## Key Features:
+- Adaptive design for desktop (1440px).
 - Game Window: Created with a specified width and height to provide a consistent and enjoyable gaming experience.
 - Constants Definition: Defined constants such as block size, grid width, grid height, and colors used in the game for better code management and readability.
 - Tetris Shapes Enumeration: Enumerated various Tetris shapes, each represented by a matrix of ones and zeros, where ones indicate occupied cells.
